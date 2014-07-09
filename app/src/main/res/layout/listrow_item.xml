@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/layout_listview_material"
+        android:layout_marginBottom="15dp">
+
+        <ImageView
+            android:id="@+id/iv_img_item"
+            android:layout_width="150dip"
+            android:layout_height="150dip"
+            android:src="@android:color/black"/>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="150dip"
+            android:layout_toRightOf="@+id/iv_img_item"
+            android:background="@android:color/white"
+            android:orientation="horizontal"
+            android:padding="0dip" >
+            <TextView
+                android:id="@+id/tv_text"
+                android:padding="15dp"
+                android:background="@drawable/textview_listview_material"
+                android:layout_width="fill_parent"
+                android:layout_height="115dip" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="35dip"
+                android:orientation="horizontal"
+                android:layout_below="@+id/tv_text">
+
+                <LinearLayout
+                    android:id="@+id/ll_view_item"
+                    android:padding="5dp"
+                    android:orientation="horizontal"
+                    android:layout_alignParentRight="true"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:background="@drawable/button_selector"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/iv_add"
+                        android:layout_width="15dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_view"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="@string/b_view_item"
+                        android:textSize="10sp"
+                        android:textColor="@color/Black"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_edit_item"
+                    android:padding="5dp"
+                    android:orientation="horizontal"
+                    android:layout_alignParentRight="true"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:background="@drawable/button_selector"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/iv_edit"
+                        android:layout_width="15dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_edit"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="@string/b_edit_item"
+                        android:textSize="10sp"
+                        android:textColor="@color/Black"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/ll_del_item"
+                    android:padding="5dp"
+                    android:orientation="horizontal"
+                    android:layout_alignParentRight="true"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:background="@drawable/button_selector"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/iv_del"
+                        android:layout_width="15dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_delete"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="@string/b_del_item"
+                        android:textSize="10sp"
+                        android:textColor="@color/Black"/>
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+</RelativeLayout>
