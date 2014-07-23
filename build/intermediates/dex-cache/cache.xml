@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pre-dex-items>
+
+    <item
+        dex="D:\Development\Android\exercise-project\KotakwarnaStudioUI\app\build\intermediates\pre-dexed\debug\classes-513e5821cd0283d359e72f5d2ddbf6580cfe5f95.jar"
+        jar="D:\Development\Android\exercise-project\KotakwarnaStudioUI\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\20.0.0\classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="f21927d22fe31889ecce94dd697a2e75b137e0ef"/>
+    <item
+        dex="D:\Development\Android\exercise-project\KotakwarnaStudioUI\app\build\intermediates\pre-dexed\debug\internal_impl-20.0.0-6117626de449d65fbf6a5a016cade61aca85d17a.jar"
+        jar="D:\Development\Android\exercise-project\KotakwarnaStudioUI\app\build\intermediates\exploded-aar\com.android.support\support-v4\20.0.0\libs\internal_impl-20.0.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="e40b3078e3fbd353c9f44da8df25a8fc0078209d"/>
+    <item
+        dex="D:\Development\Android\exercise-project\KotakwarnaStudioUI\app\build\intermediates\pre-dexed\debug\classes-deca068b050eb23070caad4fb5d0618e7fa5ae2e.jar"
+        jar="D:\Development\Android\exercise-project\KotakwarnaStudioUI\app\build\intermediates\exploded-aar\com.android.support\support-v4\20.0.0\classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="8694693636ab36910c8100ce527c258ff3ebece0"/>
+    <item
+        dex="D:\Development\Android\exercise-project\KotakwarnaStudioUI\app\build\intermediates\pre-dexed\debug\internal_impl-20.0.0-18cbea953390ea590de3ed19e75d4c3e12d2cb7e.jar"
+        jar="D:\Development\Android\exercise-project\KotakwarnaStudioUI\app\build\intermediates\exploded-aar\com.android.support\support-v13\20.0.0\libs\internal_impl-20.0.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="27bbd3982cdfe4468a9bf99c8c773734a9049e33"/>
+    <item
+        dex="D:\Development\Android\exercise-project\KotakwarnaStudioUI\app\build\intermediates\pre-dexed\debug\classes-dde485397e0f534ec02a853c784f610b53d30241.jar"
+        jar="D:\Development\Android\exercise-project\KotakwarnaStudioUI\app\build\intermediates\exploded-aar\com.android.support\support-v13\20.0.0\classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="e128103d5281ddd26195a7f980b36d0d005a4e56"/>
+    <item
+        dex="D:\Development\Android\exercise-project\KotakwarnaStudioUI\app\build\intermediates\pre-dexed\debug\support-annotations-20.0.0-95c6567ed2c1ce2667e9449adc9274c57595b44f.jar"
+        jar="D:\Development\Android\android-sdk-windows\extras\android\m2repository\com\android\support\support-annotations\20.0.0\support-annotations-20.0.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="9d9013e9ff35fc3756411e62873c363c70c638fa"/>
+
+</pre-dex-items>
