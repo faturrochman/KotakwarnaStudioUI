@@ -7,8 +7,8 @@ import android.content.res.Configuration;
 import android.content.res.TypedArray;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.ActionBarDrawerToggle;
-import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
@@ -41,7 +41,7 @@ public class Drawer_LeftMenu_Impl extends ActionBarActivity implements Drawer_Le
         super.onCreate(savedInstanceState);
         setContentView(R.layout.a_drawerlayout_leftmenu);
         setCustomActionBar();
-         setDrawer();
+        setDrawer();
 
         fragmentManager = getFragmentManager();
         fragmentTransaction = fragmentManager.beginTransaction();
@@ -94,14 +94,11 @@ public class Drawer_LeftMenu_Impl extends ActionBarActivity implements Drawer_Le
     private void setCustomActionBar(){
         getSupportActionBar().setCustomView(R.layout.actionbar_layout);
         getSupportActionBar().setDisplayOptions(android.support.v7.app.ActionBar.DISPLAY_SHOW_CUSTOM | android.support.v7.app.ActionBar.DISPLAY_SHOW_HOME | android.support.v7.app.ActionBar.DISPLAY_HOME_AS_UP);
-        getSupportActionBar().setIcon(
-                new ColorDrawable(getResources().getColor(android.R.color.transparent)));
+        getSupportActionBar().setIcon(new ColorDrawable(getResources().getColor(android.R.color.transparent)));
         getSupportActionBar().setBackgroundDrawable(null);
-
     }
 
     private void setDrawer(){
-
         drawerLayout = (DrawerLayout) findViewById(R.id.drawerlayout_leftmenu);
         drawerToggle = new ActionBarDrawerToggle(
                 this,
@@ -121,7 +118,7 @@ public class Drawer_LeftMenu_Impl extends ActionBarActivity implements Drawer_Le
             }
         };
         drawerLayout.setDrawerListener(drawerToggle);
-        drawerLayout.setDrawerShadow(R.drawable.ic_drawer_shadow, GravityCompat.START);
+//        drawerLayout.setDrawerShadow(R.drawable.ic_drawer_shadow, GravityCompat.START);
         getActionBar().setDisplayHomeAsUpEnabled(true);
 
         String[] drawerList = getResources().getStringArray(R.array.drawer_menu);
@@ -146,9 +143,8 @@ public class Drawer_LeftMenu_Impl extends ActionBarActivity implements Drawer_Le
 
     @Override
     public void onChangeFragment() {
-
-        FragmentManager fm = getFragmentManager();
-        FragmentTransaction ft = fm.beginTransaction();
+        fragmentManager = getFragmentManager();
+        FragmentTransaction ft = fragmentManager.beginTransaction();
         ft.setCustomAnimations(R.animator.slide_in_left, R.animator.slide_out_right, R.animator.slide_in_right, R.animator.slide_out_left);
         ItemView itemView = new ItemView();
         if(!itemView.isInLayout()){
@@ -160,15 +156,15 @@ public class Drawer_LeftMenu_Impl extends ActionBarActivity implements Drawer_Le
 
     @Override
     public void onChangeActivity() {
-        Intent intent = new Intent(getApplicationContext(), Search_Menu.class);
+        Intent intent = new Intent(getApplicationContext(), Search_Menu_Impl.class);
         startActivity(intent);
     }
 
     @Override
     public void onChangeFragmentLeftRightCursor(boolean side) {
 
-        FragmentManager fm = getFragmentManager();
-        FragmentTransaction ft = fm.beginTransaction();
+        fragmentManager = getFragmentManager();
+        FragmentTransaction ft = fragmentManager.beginTransaction();
         if(side){
             ft.setCustomAnimations(R.animator.slide_in_left, R.animator.slide_out_right, R.animator.slide_in_right, R.animator.slide_out_left);
         }else{
@@ -184,34 +180,38 @@ public class Drawer_LeftMenu_Impl extends ActionBarActivity implements Drawer_Le
 
     @Override
     public void onBackPressed(){
-        FragmentManager fm = getFragmentManager();
-        if (fm.getBackStackEntryCount() > 0) {
-            fm.popBackStack();
+        fragmentManager = getFragmentManager();
+        if (fragmentManager.getBackStackEntryCount() > 0) {
+            fragmentManager.popBackStack();
         } else {
             super.onBackPressed();
         }
     }
 
     private class DrawerItemClickListener implements ListView.OnItemClickListener {
-
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
             selectItem(position);
         }
     }
 
-    private void selectItem(int position) {
-        if(position==0){
-            fragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
-            FragmentManager fm = getFragmentManager();
-            FragmentTransaction ft = fm.beginTransaction();
-            lv_drawer.setItemChecked(position, true);
-            ItemListView itemListView = new ItemListView();
-            if(!itemListView.isInLayout()){
-                ft.replace(R.id.content_frame, itemListView, ItemListView.TAG);
-                ft.commit();
+    private void selectItem(final int position) {
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                if(position==0){
+                    fragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
+                    fragmentManager = getFragmentManager();
+                    FragmentTransaction ft = fragmentManager.beginTransaction();
+                    lv_drawer.setItemChecked(position, true);
+                    ItemListView itemListView = new ItemListView();
+                    if(!itemListView.isInLayout()){
+                        ft.replace(R.id.content_frame, itemListView, ItemListView.TAG);
+                        ft.commit();
+                    }
+                }
             }
-        }
+        },200);
         drawerLayout.closeDrawer(lv_drawer);
     }
  }

@@ -16,7 +16,7 @@ import com.project.kws.kotakwarnastudioui.R;
 /**
  * Created by Fajar on 7/9/2014.
  */
-public class Search_Menu extends ActionBarActivity {
+public class Search_Menu_Impl extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
